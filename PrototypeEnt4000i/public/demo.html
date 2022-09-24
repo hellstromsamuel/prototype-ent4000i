@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+
+  <title>Jobbify - Demo</title>
+
+  <link href="./style.css" rel="stylesheet">
+  <link href="./demo.css" rel="stylesheet">
+
+</head>
+
+<body> 
+
+
+  <div class="hero-full-container background-image-container white-text-container"> <!--- Style from style.css-->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Jobbify - demo 🧑‍💻</h1>
+          <p style="font-size: 26px; ">
+            Test hvordan den digitale plattformen kan se ut!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-container">
+    <a href="./index.html">
+        <button id="homeBtn">&#10094; &nbsp; Hjem</button>
+    </a>
+    <br>
+    <p style="font-size: 16px">
+      <strong>Mål:</strong> Plattform hvor bedrifter og studenter møtes med få inngangsbarrierer. For bedrifter ønsker vi å presentere studenter som matcher deres kriterer på en rask og effektiv måte. Validere studenters ferdigheter og sortere/matche ut i fra fagfelt og kunnskap. For studenter ønsker vi å skape et lavterksel-tilbud for å komme i kontakt med næringslivet.
+    </p>
+    <br>
+    <p style="font-size: 16px">
+      <strong>Merk:</strong> Dette viser hvordan det kan se ut. Alle sentrale funksjoner og tjenester er ikke implementert enda.
+    </p>
+    <br>
+    <hr>
+
+    <h2>Menu</h2>
+
+    <div class="switch" id="switch-main">
+      <input type="radio" class="switch-input" name="main-radio" value="" id="radio-main-adm" onclick="mainMenu()" checked>
+      <label for="radio-main-adm" class="switch-label switch-label-off">Legge til / registrere</label>
+      <input type="radio" class="switch-input" name="main-radio" value="" id="radio-main-market" onclick="mainMenu()">
+      <label for="radio-main-market" class="switch-label switch-label-on">Se annonser / profiler</label>
+      <span class="switch-selection"></span>
+    </div>
+
+    <h3>Valg</h3>
+    <div class="switch" id="switch-adm">
+      <input type="radio" class="switch-input" name="adm-radio" value="" id="radio-adm-companies" onclick="admOptions()" checked>
+      <label for="radio-adm-companies" class="switch-label switch-label-off">Bedrift - legge til</label>
+      <input type="radio" class="switch-input" name="adm-radio" value="" id="radio-adm-students" onclick="admOptions()">
+      <label for="radio-adm-students" class="switch-label switch-label-on">Student - registrere</label>
+      <span class="switch-selection"></span>
+    </div>
+
+    <div class="switch" id="switch-market">
+      <input type="radio" class="switch-input" name="market-radio" value="week" id="radio-market-companies" onclick="marketOptions()" checked>
+      <label for="radio-market-companies" class="switch-label switch-label-off">Annonser bedrifter</label>
+      <input type="radio" class="switch-input" name="market-radio" value="month" id="radio-market-students" onclick="marketOptions()">
+      <label for="radio-market-students" class="switch-label switch-label-on">Studentprofiler</label>
+      <span class="switch-selection"></span>
+    </div>
+    
+    <br><br>
+
+
+    <div id="companies-adm">
+      <p><Strong>Her kan bedrifter legge til oppgave/ arragement/ annonse/ samarbeid/ etterspørsel, akkurat det man trenger eller ønsker. Vil man ha flere ting kan man sende inn flere oppgaver til tjenesten.</Strong></p>
+      <br>
+      <p>Hva er bedriften ute etter?</p>
+      <div class="radio-holder">
+        <label class="radio-container">Få løst en oppgave
+          <input type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="radio-container">Holde et arragement
+          <input type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="radio-container">Samarbeid
+          <input type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="radio-container">Annonse jobbtilbud
+          <input type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <label class="radio-container">Teste studenter
+          <input type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Noe annet
+          <input id="radio-type-annet" onclick="visAnnetInput()" type="radio" name="radio-type">
+          <span class="checkmark"></span>
+        </label>
+        <input id="input-annet" style="width:250px;display:none;" type="text" placeholder="Hva ønsker dere?">
+      </div>
+      <br>
+      <input id="category-input" class="class-input" type="text" placeholder="Kategori">
+      <br>
+      <textarea type="text" class="class-input" placeholder="Beskrivelse"></textarea>
+      <br>
+      <input type="number" class="class-input" placeholder="Antall deltakere">
+      <br>
+      <input type="text" class="class-input" placeholder="Sted">
+      <br><br>
+      <p>Digitalt?</p>
+      <div class="radio-holder yes-no-radio">
+        <label class="radio-container">Ja
+          <input type="radio" name="radio-digital">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Nei
+          <input type="radio" name="radio-digital">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Delvis
+          <input type="radio" name="radio-digital">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <br>
+      <p>Når ønsker du tjenesten? (fiktive priser)</p>
+      <div class="radio-holder">
+        <label class="radio-container">Under 24t (500kr/t)
+          <input type="radio" name="radio-time">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">1-2 uker (300kr/t)
+          <input type="radio" name="radio-time">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">> 1 måned (200kr/t)
+          <input type="radio" name="radio-time">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Gitt dato (350kr/t)
+          <input id="radio-time-date" onclick="visDatoInput()" type="radio" name="radio-time">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <input type="date" id="dato" style="display:none;" name="date-input">
+      <br>
+      <p>Varighet (kan være tom)</p>
+      <div id="div-duration">
+        Timer&nbsp;<input value="0" min="0" max="24" class="duration-input" type="number">
+        <br>
+        Dager&nbsp;<input value="0" min="0" max="31" class="duration-input" type="number">
+        <br>
+        Måneder&nbsp;<input value="0" min="0" max="12" class="duration-input" type="number">
+      </div>
+      <br>
+      <input type="text" class="class-input" placeholder="Kommentar">
+      <br><br>
+      <p>Kontakt (frivillig, vises ikke)</p>
+      <input type="text" class="class-input" placeholder="E-post">
+      <br>
+      <button id="sendTaskBtn" class="sendBtn" onclick="sendTask()">Send inn</button>
+    </div>
+
+
+    <div id="students-adm">
+      <p><Strong>Studenter kan registere en profil som brukes til påmelding, rekruttering og kommunikasjon med bedrifter.</Strong></p>
+      <br>
+      <p>Fyll inn student informasjon</p>
+      <select id="select-student" class="class-input">
+        <option value="Rolle" disabled selected>Rolle</option>
+        <option>Student</option>
+        <option>Nyutdannet</option>
+        <option>Annen bakgrunn</option>
+      </select>
+      <br>
+      <input id="education-place-student" type="text" class="class-input" placeholder="Utdanningssted">
+      <select id="education-student" class="class-input">
+        <option value="Utdanningsnivå" disabled selected>Utdanningsnivå</option>
+        <option>Årsstudium</option>
+        <option>Bachelor</option>
+        <option>Master</option>
+        <option>Doktorgrad</option>
+        <option>Annet</option>
+      </select>
+      <br>
+      <select id="progression-student" class="class-input">
+        <option value="Progresjon (antall år)" disabled selected>Progresjon (antall år)</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+      <br>
+      <input id="category-student" type="text" class="class-input" placeholder="Kategori / fagfelt">
+      <br>
+      <input id="skills-student" type="text" class="class-input" placeholder="Spesielle ferdigheter">
+      <br>
+      <!--- <input type="text" class="class-input" placeholder="LinkedIn link"> --->
+      <br><br>
+      <p>Kontakt (frivillig, vises ikke)</p>
+      <input id="email-student" type="text" class="class-input" placeholder="E-post">
+      <button id="register-student-btn" class="sendBtn">Registrer profil</button>
+    </div>
+
+
+    <div id="companies-market">
+      <h3 style="color:black">Her vises annonser til bedrifter</h3>
+    </div>
+
+
+    <div id="students-market">
+      
+    </div>
+    <br>
+    <div class="margin-10vh">.</div>
+
+
+  </div>
+
+
+
+  
+
+  <script type="text/javascript" src="./demo.js"></script>
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDn0mFfesuI70sLm9CBNqKs45vw-_ItIrg",
+      authDomain: "ent4000i.firebaseapp.com",
+      projectId: "ent4000i",
+      storageBucket: "ent4000i.appspot.com",
+      messagingSenderId: "45354062223",
+      appId: "1:45354062223:web:27dc26c1df644e68ed7bfa",
+      measurementId: "G-R0XTL275M5"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    console.log(app);
+
+    const db = getFirestore();
+    console.log(db);
+
+    // Skrive data
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+
+    // Registrere student
+    const selectMainOpt = document.getElementById("select-main-opt");
+    const selectStudent = document.getElementById("select-student");
+    const educationPlaceStudent = document.getElementById("education-place-student");
+    const educationStudent = document.getElementById("education-student");
+    const progressionStudent = document.getElementById("progression-student");
+    const categoryStudent = document.getElementById("category-student");
+    const skillsStudent = document.getElementById("skills-student");
+    const emailStudent = document.getElementById("email-student");
+    const registerStudentBtn = document.getElementById("register-student-btn");
+    registerStudentBtn.addEventListener("click", registrerStudent);
+
+    async function registrerStudent(){
+      try {
+        const docRef = await addDoc(collection(db, "studentprofiles"), {
+          role: selectStudent.value,
+          place: educationPlaceStudent.value,
+          education: educationStudent.value,
+          progression: parseInt(progressionStudent.value),
+          category: categoryStudent.value,
+          skills: skillsStudent.value,
+          email: emailStudent.value
+        });
+        console.log("Document written with ID: ", docRef.id);
+        alert("Registrering fullført! Lagt til under 'Studentprofiler' 😁");
+        selectStudent.value = "Rolle";
+        educationPlaceStudent.value = "";
+        educationStudent.value = "Utdanningsnivå";
+        progressionStudent.value = "Progresjon (antall år)";
+        categoryStudent.value = "";
+        skillsStudent.value = "";
+        emailStudent.value = "";
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+
+
+
+    // ----- Read data -----
+
+    const studentsMarket = document.getElementById("students-market");
+
+    // Get all documents from a collection
+    import { getDocs } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+    async function setStudentsData(){
+      studentsMarket.innerHTML = "<h3 style='color:black'>Her vises studentprofiler</h3>";
+      const querySnapshot = await getDocs(collection(db, "studentprofiles"));
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        var d = doc.data();
+        studentsMarket.appendChild(buildData(d.role, d.place, d.education, d.progression, d.category, d.skills));
+      });
+    }
+
+    function buildData(role, place, education, progression, category, skills){
+      var div = document.createElement("div");
+      div.className = "student-profile";
+
+      var p = document.createElement("p");
+      p.className = "p-header";
+      p.innerHTML = role;
+      div.appendChild(p);
+
+      var img = document.createElement("img");
+      img.className = "student-icon";
+      img.src = "assets/images/graduated.png";
+      div.appendChild(img);
+
+      p = document.createElement("p");
+      p.className = "p-holder";
+      p.innerHTML = "Utdanningssted: <strong>" + place +"</strong>";
+      div.appendChild(p);
+
+      p = document.createElement("p");
+      p.className = "p-holder";
+      p.innerHTML = "Utdanningsnivå: <strong>" + education +"</strong>";
+      div.appendChild(p);
+
+      p = document.createElement("p");
+      p.className = "p-holder";
+      p.innerHTML = "År utdanning: <strong>" + progression +". året</strong>";
+      div.appendChild(p);
+
+      p = document.createElement("p");
+      p.className = "p-holder";
+      p.innerHTML = "Kategori/fagfelt: <strong>" + category +"</strong>";
+      div.appendChild(p);
+
+      p = document.createElement("p");
+      p.className = "p-holder";
+      p.innerHTML = "Spesielle ferdigheter: <strong>" + skills +"</strong>";
+      div.appendChild(p);
+
+      var btn = document.createElement("button");
+      btn.className = "student-contact-btn";
+      btn.innerHTML = "Kontakt &#10095;"
+      div.append(btn)
+
+      return div;
+    }
+
+    function studentContact(){
+      
+    }
+
+    // Listen for a change in the collection
+    import { onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+
+    const unsubscribe = onSnapshot(collection(db, "studentprofiles"), () => {
+      setStudentsData();
+    });
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

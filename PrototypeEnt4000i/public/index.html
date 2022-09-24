@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+
+  <title>ENT4000i - Prosjekt</title>
+
+<link href="style.css" rel="stylesheet">
+<link href="navbar.css" rel="stylesheet">
+<link href="sections.css" rel="stylesheet">
+
+</head>
+ 
+<body> 
+  <header class="header" id="header">
+    <nav class="nav">
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+
+              <li class="nav__item">
+                <a href="#about" class="nav__link">
+                    <i class='bx bx-group nav__icon'></i>
+                    <span class="nav__name">Om oss</span>
+                </a>
+              </li>
+
+              <li class="nav__item">
+                  <a href="#bedrifter" class="nav__link">
+                      <i class='bx bx-briefcase-alt-2 nav__icon'></i> <!--Henter icons, class name (uten 'nav__icon') er hvilket icon-->
+                      <span class="nav__name">Bedrifter</span>
+                  </a>
+              </li>
+
+              <li class="nav__item">
+                  <a href="#studenter" class="nav__link">
+                      <i class='bx bxs-graduation nav__icon'></i>
+                      <span class="nav__name">Studenter</span>
+                  </a>
+              </li>
+
+              <li class="nav__item">
+                  <a href="#feedback" class="nav__link">
+                      <i class='bx bx-message-alt-check nav__icon'></i>
+                      <span class="nav__name">Feedback</span>
+                  </a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+  <div class="hero-full-container background-image-container white-text-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Jobbify 🧑‍🎓</h1>
+          <p style="font-size: 26px;">
+            Digital plattform hvor studenter møter næringslivet
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <section id="about" class="section__height">
+    <div class="section-container  text-center">
+      <a href="./demo.html">
+        <button id="demoBtn">Demo  &nbsp; &#10095;</button>
+      </a>
+      <h2>Om oss</h2>
+      <p style="width: 80%; margin-left:10%">Prosjektoppgave i emnet ENT4000i - "Fra idé til virksomhet" ved UiO. Gruppe 2, tverrligfag gruppe hvor emnet tas i forbindelse med Gründerskolen 2022 🇺🇸</p>
+      
+      <a href="https://www.uio.no/studier/emner/matnat/sfe/ENT4000I/">
+        <img src="./assets/images/uio_logo.png"  class="image-about">
+      </a>
+      <a href="https://grunderskolen.no/">
+        <img src="./assets/images/grunderskolen.jpeg" class="image-about">
+      </a>
+    </div>
+  </section>
+
+
+  <!--=============== Bedrifter ===============-->
+  <section id="bedrifter" class="section__height">
+
+    <div class="section-container">
+      <h2 class="text-center">Bedrifter</h2>
+      <img id="img-companies" value="slide0" src="./assets/images/workmentor.jpg">
+
+      <div class="text-container">
+        <div class="left-right-container">
+          <h3 id="header-companies" style="width:70%"></h3>
+          <div>
+            <i id="btn_prev_companies" onclick="plusSlidesCompanies(-1)" class='clickbuttons bx bxs-left-arrow-circle'></i>
+            <i id="btn_next_companies" onclick="plusSlidesCompanies(1)" class='clickbuttons bx bxs-right-arrow-circle'></i>
+          </div>
+        </div>
+
+          <p>
+            <span id="intro-companies"></span>
+            <span id="dots-companies">...</span>
+            <span id="description-companies" class="description"> </span>
+          </p>
+          <button id="readMoreBtnCompanies" class="readMoreBtn" onclick="readMoreCompanies()">
+            Les mer +
+          </button>
+      </div>
+      
+    </div>
+
+  </section>
+
+
+    <!--=============== Studenter ===============-->
+    <section id="studenter" class="section__height">
+      
+      <div class="section-container">
+        <h2 class="text-center">Studenter</h2>
+        <img id="img-students" value="0" src="./assets/images/groupwork.jpg">
+
+        <div class="text-container">
+          <div class="left-right-container">
+            <h3 id="header-students" style="width:70%"></h3>
+            <div>
+              <i id="btn_prev_students" onclick="plusSlidesStudents(-1)" class='clickbuttons bx bxs-left-arrow-circle'></i>
+              <i id="btn_next_students" onclick="plusSlidesStudents(1)" class='clickbuttons bx bxs-right-arrow-circle'></i>
+            </div>
+          </div>
+
+            <p>
+              <span id="intro-students"></span>
+              <span id="dots-students">...</span>
+              <span id="description-students" class="description"> </span>
+            </p>
+            <button id="readMoreBtnStudents" class="readMoreBtn" onclick="readMoreStudents()">
+              Les mer +
+            </button>
+        </div>
+        
+      </div>
+
+    </section>
+
+
+  <!--=============== Feedback ===============-->
+  <section id="feedback" class="section__height">
+    
+    <div class="section-container text-center">
+      <h2>Kontakt / feedback</h2>
+      <p style="width: 80%; margin-left:10%">Noe du likte spesielt godt eller noe du har spørsmål om? Nysgjerrig på hvordan tjenesten kan fungere? Vi setter stor pris på alle tilbakemeldinger 🤩</p>
+      
+      <br>
+      <input id="email" type="email" placeholder="E-post">
+      <br>
+      <textarea id="best" type="text" class="class-input" placeholder="Hva likte du best?"></textarea>
+      <br>
+      <textarea id="message" type="text" class="class-input" placeholder="Tilbakemelding"></textarea>
+      <br>
+      <button id="sendFeedbackBtn">Send</button>
+      <br>
+      <p id="sentText1" class="confirmation-text" style="display: none; font-size: 50px;margin-top: 20px;">✅ </p>
+      <p id="sentText2" class="confirmation-text" style="display: none; max-width:400px; margin-left: auto;margin-right: auto; margin-bottom: 20vh;">Takk for tilbakemelding! Bare å sende inn mer dersom det er noe man lurer på 😁</p>
+
+    </div>
+   
+  </section>
+
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript" src="./sections.js"></script>
+
+  
+
+
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDn0mFfesuI70sLm9CBNqKs45vw-_ItIrg",
+      authDomain: "ent4000i.firebaseapp.com",
+      projectId: "ent4000i",
+      storageBucket: "ent4000i.appspot.com",
+      messagingSenderId: "45354062223",
+      appId: "1:45354062223:web:27dc26c1df644e68ed7bfa",
+      measurementId: "G-R0XTL275M5"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    console.log(app);
+
+    const db = getFirestore();
+    console.log(db);
+
+    const analytics = getAnalytics();
+
+
+
+    import { doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js";
+    const prevBtnC = document.getElementById("btn_prev_companies");
+    const nextBtnC = document.getElementById("btn_next_companies");
+    prevBtnC.addEventListener("click", clickCompaniesDb);
+    nextBtnC.addEventListener("click", clickCompaniesDb);
+
+    async function clickCompaniesDb(){
+      const clickCompaniesRef = doc(db, "clicks", "companies");
+      await updateDoc(clickCompaniesRef, {
+          total: increment(1)
+      });
+    }
+
+    const prevBtnS = document.getElementById("btn_prev_students");
+    const nextBtnS = document.getElementById("btn_next_students");
+    prevBtnS.addEventListener("click", clickStudentsDb);
+    nextBtnS.addEventListener("click", clickStudentsDb);
+
+    async function clickStudentsDb(){
+      const clickStudentsRef = doc(db, "clicks", "students");
+      await updateDoc(clickStudentsRef, {
+          total: increment(1)
+      });
+    }
+
+
+      // Skrive data
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+    const emailI = document.getElementById("email");
+    const messageI = document.getElementById("message");
+    const bestI = document.getElementById("best");
+    const feedbackBtn = document.getElementById("sendFeedbackBtn");
+    const sentText1 = document.getElementById("sentText1");
+    const sentText2 = document.getElementById("sentText2");
+    feedbackBtn.addEventListener("click", sendFeedback);
+
+    async function sendFeedback(){
+      try {
+        const docRef = await addDoc(collection(db, "feedback"), {
+          email: emailI.value,
+          message: messageI.value,
+          best: bestI.value
+        });
+        console.log("Document written with ID: ", docRef.id);
+        alert("Tusen takk for tilbakemelding! 😁");
+        emailI.value = "";
+        messageI.value = "";
+        bestI.value = "";
+        feedbackBtn.style.marginBottom = "0";
+        sentText1.style.display = "block";
+        sentText2.style.display = "block";
+        sentText1.style.opacity = "1";
+        sentText2.style.opacity = "1";
+        await new Promise(resolve => setTimeout(resolve, 5000)); // 5 sec
+        sentText1.style.opacity = "0";
+        sentText2.style.opacity = "0";
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+
+  </script>
+
+
+
+</body>
+
+</html>

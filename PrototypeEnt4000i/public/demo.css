@@ -1,0 +1,339 @@
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+    --first-color:#1763e9;
+    --second-color:#4c93f0;
+    --hue: 270;                     
+    --sat: 63%;
+    --z-fixed: 100;
+}
+
+button {
+    border:var(--first-color) solid 1px;
+    color: var(--first-color);
+    background: white;
+}
+
+input {
+    border:gray solid 1px;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 10px;
+}
+.class-input {
+  width:100%;
+  max-width: 400px;
+}
+
+select {
+  border:gray solid 1px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  background: white;
+}
+
+textarea {
+  padding: 12px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  resize: none;
+  border-radius: 10px;
+}
+
+p {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    font-size: 22px;
+}
+
+h3 {
+    margin-top: 30px;
+    color: var(--first-color);
+}
+
+
+
+
+
+
+/* ---------- */
+#homeBtn {
+    font-size: 30px;
+    padding:10px 30px 10px 30px;
+    border-radius: 4px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    transition: 0.4s ease-in-out;
+}
+#homeBtn:hover {
+    background: var(--first-color);
+    color: white;
+}
+
+
+.main-container {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    max-width: 800px;
+    margin-bottom: 10vh;
+}
+
+.menu-button {
+    padding: 10px;
+}
+
+
+/* ----- Menu buttons ----- */
+.switch {
+  position: relative;
+  height: 50px;
+  width: 304px;
+  background: white;
+  align-items: center;
+  margin: auto;
+  border: 1px solid var(--first-color);
+  border-radius: 3px;
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 150px;
+  line-height: 50px;
+  font-size: 15px;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  color: white;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 150px;
+  /* Note: left: 50%; doesn't transition in WebKit */
+}
+
+.switch-selection {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 150px;
+  height: 44px;
+  border-radius: 3px;
+  background-color: var(--first-color);
+
+  -webkit-transition: left 0.2s ease-out;
+  -moz-transition: left 0.2s ease-out;
+  -ms-transition: left 0.2s ease-out;
+  -o-transition: left 0.2s ease-out;
+  transition: left 0.2s ease-out;
+}
+
+
+
+/* ----- Check/radio ----- */
+.radio-holder {
+    margin-top: 15px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The container */
+.radio-container {
+    width: 220px;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+.yes-no-radio {
+    width: 100px;
+}
+  
+  /* Hide the browser's default radio button */
+  .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .radio-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .radio-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .radio-container .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+
+
+#div-duration {
+    width: 150px;
+    margin: auto;
+    text-align: right;
+}
+.duration-input {
+    width:60px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.sendBtn {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20vh;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+.sendBtn:active {
+    color: white;
+    background: var(--first-color);
+}
+
+
+
+/* ----- READ ----- */
+.margin-10vh{
+  display: block;
+  margin-top: 5vh;
+  width: 100%;
+  color: white;
+}
+.student-profile {
+  position: relative;
+  box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  width:45.5%;
+  margin-left: 3%;
+  min-height: 360px;
+  padding: 10px;
+  float: left;
+  border-radius: 5px;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+.p-header {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+.p-holder {
+  width: 100%;
+  margin: 5px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+}
+.student-icon {
+  width:30%;
+}
+.student-contact-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin-left: 25%;
+  padding: 5px 15px 5px 15px;
+  color:white;
+  background: green;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+
+
+/* --- Media screen / responsive --- */
+@media screen and (max-width: 600px) {
+  .student-profile{
+    padding: 4px;
+    min-height: 300px;
+  }
+  .p-holder {
+    font-size: 10px;
+  }
+  .student-contact-btn {
+    font-size: 15px;
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 800px) {
+    .main-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
