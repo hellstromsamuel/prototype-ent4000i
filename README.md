@@ -1,5 +1,5 @@
 # Prototype ENT4000i
-[Test applikasjonen](https://www.ent4000i.web.app)
+[Test the web-app](https://ent4000i.web.app)
 
 Landing page for a startup idea in a introduction course to entrepreneurship ENT4000i. Interdisiplinary group project, where I contributed with my software development skills.
 * Developed with Firebase for database and hosting
